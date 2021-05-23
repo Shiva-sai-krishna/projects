@@ -19,7 +19,7 @@ model.fit(train_X,train_y)
 mae=mae(val_y,model.predict(val_X))
 model.fit(X,y)
 
-my_data=list(map(float,input("enter the following details\nage hypertension heart disease avg glucose level bmi\n").split()))
+my_data=list(map(float,input("enter the following details\n1) your age\n2) do you have hypertension (0 or 1)\n3) do you have heart disease (0 or 1)\n4) your average glucose level\n5)your BMI\n").split()))
 my_dataframe=pd.DataFrame([my_data],columns=l)
 print("your chance of stroke : ",model.predict(my_dataframe)[0]*100,"% +/- ",mae*100,"%")
 
